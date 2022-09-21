@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<opencv_storage>
+
+    <debug>1</debug>
+    <debug_serial_frequency_send>0</debug_serial_frequency_send>
+    <debug_serial_frequency_read>0</debug_serial_frequency_read>
+    <debug_gyro_data>0</debug_gyro_data>
+    <debug_speed>1</debug_speed>
+
+    <debug_show_bin>0</debug_show_bin>
+    <debug_show_light>0</debug_show_light>
+    <debug_classifier>0</debug_classifier>
+
+    <show_armor>1</show_armor>
+    <show_multi_armor>1</show_multi_armor>
+    <show_pnp>1</show_pnp>
+    <show_distance>1</show_distance>
+    <show_ID>1</show_ID>
+    <show_predict>1</show_predict>
+
+    <!-- 比赛时置0！！！-->
+    <debug_no_gyro>1</debug_no_gyro>   <!-- 无陀螺仪-->
+    <debug_no_competition>1</debug_no_competition>  <!-- 非比赛状态-->
+</opencv_storage>

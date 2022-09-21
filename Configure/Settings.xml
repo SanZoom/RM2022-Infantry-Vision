@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<opencv_storage>
+
+    <enemy_color>1</enemy_color>    <!-- 1:BLUE, 2:RED-->
+    
+    <!-- 相机参数-->
+    <exposure_auto>0</exposure_auto>
+    <exposure_time>5000</exposure_time> <!-- us -->
+    
+    <w_auto>0</w_auto>
+    <w_red>1.98</w_red>
+    <w_green>1.0</w_green>
+    <w_blue>1.98</w_blue>
+
+    <gain_auto>0</gain_auto>
+    <gain>15</gain>
+    <!-- 相机参数-->
+    
+
+    <!-- 装甲板筛选参数-->
+    <lights_angle_max_dif>15.0</lights_angle_max_dif>                    <!--角度-->
+    <lights_length_max_ratio>1.5</lights_length_max_ratio>                  
+    <lights_Y_max_ratio>1.5</lights_Y_max_ratio>                       <!--角度-->
+    <armor_width_height_min_ratio>1.1</armor_width_height_min_ratio>
+    <armor_width_height_max_ratio>5.0</armor_width_height_max_ratio>
+    <armor_max_angle>35.0</armor_max_angle>                             <!--角度-->
+    <armor_inside_thresh>85.0</armor_inside_thresh>
+
+    <armor_number_confidence>0.6</armor_number_confidence>
+    <erase_wrong_armor>1</erase_wrong_armor>
+
+    <light_height_width_min_ratio>1.5</light_height_width_min_ratio>
+    <light_height_width_max_ratio>12.0</light_height_width_max_ratio>   <!--弃用-->
+    <light_size_area_min_ratio>0.4</light_size_area_min_ratio>  
+    <light_angle_to_vertigal_max>35.0</light_angle_to_vertigal_max>      <!--角度-->
+
+    <blue_red_diff>30</blue_red_diff>
+    <red_blue_diff>25</red_blue_diff>
+
+    <blue_light_threshold>100</blue_light_threshold>   
+    <red_light_threshold>90</red_light_threshold>
+
+    <same_lights_max_dis>5</same_lights_max_dis>   
+    <same_armors_max_dis_ratio>1.5</same_armors_max_dis_ratio>
+
+    <box_height_enlarge>1.2</box_height_enlarge>    <!--1.1, 1.2 均可，1.0效果较差-->
+    <!-- 装甲板参数-->
+
+
+    <!-- 反小陀螺参数-->
+    <spin_timeout>1300</spin_timeout>
+    <min_spin_count>5</min_spin_count>
+    <min_x_delta_ratio>0.3</min_x_delta_ratio>
+    <max_x_delta_ratio>3.0</max_x_delta_ratio>
+    <min_y_delta_ratio>0.2</min_y_delta_ratio>
+    <max_y_delta_ratio>1.2</max_y_delta_ratio>
+    <min_yaw_diff>1.0</min_yaw_diff>
+    <!-- 反小陀螺参数-->
+    
+    
+    <!-- Kalman参数-->
+    <kalman_Q type_id="opencv-matrix">  <!-- Q 过程噪声-->
+    <!--
+        调参： 预测时：速度、加速度加大 对变化敏感 加速收敛，但容易飘出去
+              位置值R小更符合实际值
+    -->
+        <rows>6</rows>
+        <cols>6</cols>
+        <dt>f</dt>
+        <data>
+            1 0. 0. 0. 0. 0.     <!-- 1-->
+            0. 100. 0. 0. 0. 0.  
+            0. 0. 1 0. 0. 0. 
+            0. 0. 0. 100. 0. 0.   <!-- 4-->
+            0. 0. 0. 0. 1 0.  
+            0. 0. 0. 0. 0. 100. 
+        </data>
+        
+    </kalman_Q>
+
+    <kalman_R type_id="opencv-matrix">  <!-- R 测量噪声-->
+        <rows>3</rows>
+        <cols>3</cols>
+        <dt>f</dt>
+        <data>
+            1 0. 0. 
+            0. 1 0. 
+            0. 0. 1
+        </data>
+    </kalman_R>
+    
+    <cam2gyro_offset>
+        -24.86  103.54   0.
+        </cam2gyro_offset>
+    <gun2cam_offset>
+        0.  0.  -44.7
+        </gun2cam_offset>
+
+
+    <!-- PNP解算参数-->
+    <camera_matrix type_id="opencv-matrix">
+        <rows>3</rows>
+        <cols>3</cols>
+        <dt>f</dt>
+        <data>
+            1.558e+03 0. 647.0
+            0. 1.551e+03 338.4
+            0. 0. 1.
+        </data>
+    </camera_matrix>
+
+    <dist_coeffs type_id="opencv-matrix">
+        <rows>1</rows>
+        <cols>5</cols>
+        <dt>f</dt>
+        <data>
+            -0.2635
+            0.2129
+	        0.0
+            0.0
+            0.0 
+        </data>
+    </dist_coeffs>
+
+    <small_armor_boxes_real_height>55</small_armor_boxes_real_height>
+    <small_armor_boxes_real_width>135</small_armor_boxes_real_width>
+    <big_armor_boxes_real_height>55</big_armor_boxes_real_height>
+    <big_armor_boxes_real_width>225</big_armor_boxes_real_width>
+    <rune_armor_boxes_real_height>125</rune_armor_boxes_real_height>
+    <rune_armor_boxes_real_width>225</rune_armor_boxes_real_width>
+    <!-- PNP解算参数-->
+
+    <!-- 其他参数-->
+    <roi_enlarge>3.0</roi_enlarge>
+    <roi_width_to_height_ratio>3.5</roi_width_to_height_ratio>
+</opencv_storage>

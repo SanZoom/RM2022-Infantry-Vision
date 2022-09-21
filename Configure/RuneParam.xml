@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<opencv_storage>
+
+    <!-- 相机参数-->
+    <exposure_auto>0</exposure_auto>
+    <exposure_time>5000</exposure_time> <!-- us -->
+
+    <w_auto>0</w_auto>
+    <w_red>1.98</w_red>
+    <w_green>1.0</w_green>
+    <w_blue>1.98</w_blue>
+
+    <gain_auto>0</gain_auto>
+    <gain>15</gain>
+    <!-- 相机参数-->
+
+    <approx_epsilon>1.0</approx_epsilon>
+
+    <blue_brightness_thresh>90</blue_brightness_thresh>
+    <blue_color_thresh>30</blue_color_thresh>
+    <red_brightness_thresh>90</red_brightness_thresh>
+    <red_color_thresh>20</red_color_thresh>
+    <blue_red_diff>20</blue_red_diff>
+
+    <!-- 比赛 -->
+    <min_armor_area>700</min_armor_area>
+    <max_armor_area>1700</max_armor_area>
+    <min_vane_area>7000</min_vane_area>
+    <max_vane_area>15000</max_vane_area>
+
+    <min_armor_vane_ratio>0.15</min_armor_vane_ratio> <!-- 等1-->
+    <max_armor_vane_ratio>0.55</max_armor_vane_ratio>
+    <armor_min_lw_ratio>1.2</armor_min_lw_ratio>
+    <armor_max_lw_ratio>2.5</armor_max_lw_ratio>
+    <vane_min_lw_ratio>1.2</vane_min_lw_ratio>
+    <vane_max_lw_ratio>2.5</vane_max_lw_ratio>
+    <vane_min_contour_rrect_ratio>0.2</vane_min_contour_rrect_ratio>
+    <vane_max_contour_rrect_ratio>0.9</vane_max_contour_rrect_ratio> <!-- 等2-->
+
+    <min_target_vane_ratio>0.3</min_target_vane_ratio>
+    <max_target_vane_ratio>0.5</max_target_vane_ratio>
+    <target_vane_min_contour_rrect_ratio>0.3</target_vane_min_contour_rrect_ratio>
+    <target_vane_max_contour_rrect_ratio>0.7</target_vane_max_contour_rrect_ratio>
+
+    <min_shot_armor_vane_ratio>0.15</min_shot_armor_vane_ratio> <!-- 等1-->
+    <max_shot_armor_vane_ratio>0.35</max_shot_armor_vane_ratio>
+    <min_shot_vane_contour_rrect_ratio>0.7</min_shot_vane_contour_rrect_ratio>
+    <max_shot_vane_contour_rrect_ratio>0.9</max_shot_vane_contour_rrect_ratio> <!-- 等2-->
+
+    <max_diff_distance_ratio>1.0</max_diff_distance_ratio>
+
+    <min_R_area_ratio>0.1</min_R_area_ratio>
+    <max_R_to_predict_distance_ratio>0.3</max_R_to_predict_distance_ratio>
+
+
+</opencv_storage>
