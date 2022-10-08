@@ -225,7 +225,7 @@ bool ArmorDetector::isBadArmor(int i, int j, const LightBlobs &lightblobs)
 bool ArmorDetector::getArmorNum(ArmorBoxes &armor_boxes)
 {
     Mat temp;
-    bool all_wrong_flag = true;      // 是否全为WRONG装甲板
+    bool all_wrong_flag = true; // 是否全为WRONG装甲板
     for (auto &armor : armor_boxes)
     {
         adjustBox(armor.box);
@@ -241,31 +241,30 @@ bool ArmorDetector::getArmorNum(ArmorBoxes &armor_boxes)
 
         switch (armor.id)
         {
-            case 0:
-            case 1:
-            case 6:
-            case 7:
-                all_wrong_flag = false;
-                armor.type = ArmorType::BIG;
-                break;
-            
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                all_wrong_flag = false;
-                armor.type = ArmorType::SMALL;
-                break;
+        case 0:
+        case 1:
+        case 6:
+        case 7:
+            all_wrong_flag = false;
+            armor.type = ArmorType::BIG;
+            break;
+
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            all_wrong_flag = false;
+            armor.type = ArmorType::SMALL;
+            break;
 
             // case 3:
             // case 4:
             // case 5:
             //     all_wrong_flag = false;
 
-            default:
-                break;
+        default:
+            break;
         }
-        
     }
     return !(param.erase_wrong_armor && all_wrong_flag);
 }
@@ -318,7 +317,7 @@ cv::Point2f ArmorDetector::getPitchYaw(ArmorBox temp_target, GyroPose gyro_pose)
     vector<Point2f> _pts;
     temp_target.getPoints(_pts);
     solver.solve(_pts, temp_target.type);
-    
+
     Eigen::Quaternionf q(gyro_pose.q_0, gyro_pose.q_1, gyro_pose.q_2, gyro_pose.q_3);
     cv::Point3f world_coord = camera2world(q, solver.point_3D, predictor.cam2gyro_offset);
     float temp_yaw = atan(world_coord.x / world_coord.z) * 180.0 / CV_PI;
@@ -340,9 +339,8 @@ cv::Point2f ArmorDetector::calPredict(cv::Point3f world_predict, GyroPose gyro_p
 {
     // 固定坐标系转回相机坐标系
     cv::Point3f cp_predict = world2camera(Eigen::Quaternionf(gyro_pose.q_0, gyro_pose.q_1, gyro_pose.q_2, gyro_pose.q_3),
-     world_predict,
-     predictor.cam2gyro_offset);
-    
+                                          world_predict,
+                                          predictor.cam2gyro_offset);
 
     // 将3D点投影回2D(用于直观测试)
     vector<cv::Point3d> origin_point;

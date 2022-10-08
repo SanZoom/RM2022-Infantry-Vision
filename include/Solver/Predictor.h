@@ -105,14 +105,14 @@ public:
                 bs_coeff *= 0.98;
         }
         else if (bullet_speed > 28 && bullet_speed < 32)
-        {   
-                bs_coeff = 1.00;
+        {
+            bs_coeff = 1.00;
             if (coord.z > 250)
                 bs_coeff *= 0.90;
             if (coord.z > 1000)
                 bs_coeff *= 0.88;
         }
-        else 
+        else
             bs_coeff = 0.9;
     }
 
@@ -122,7 +122,7 @@ public:
      *  @param  coord   相机坐标系下目标的坐标
      *  @param  gyro_pose   IMU数据
      */
-    void initState(cv::Point3f coord, GyroPose gyro_pose, bool spin_once_flag=false);
+    void initState(cv::Point3f coord, GyroPose gyro_pose, bool spin_once_flag = false);
 
     /**
      *  @brief  根据世界坐标进行预测, 对距离滤波
@@ -130,7 +130,7 @@ public:
      *  @param  gyro_pose   IMU数据
      *  @return 世界坐标系预测点
      */
-    cv::Point3f predict(cv::Point3f coord,SpinDetector &spin_detector, GyroPose gyro_pose);
+    cv::Point3f predict(cv::Point3f coord, SpinDetector &spin_detector, GyroPose gyro_pose);
 
     /**
      *  @brief  根据世界坐标进行预测, 对距离滤波

@@ -26,7 +26,6 @@ typedef struct SpeedTime
     }
 } SpeedTime;
 
-
 class FitTool
 {
 public:
@@ -38,25 +37,24 @@ private:
     double _w = 1.9;  // 频率 [1.884, 2.000]
     double t_0 = 0.0; // 初相
 
-    double MAX_T0 = 3.34;  // 最大周期
-    double T0_N = 30;      // 相位采样数
-    double DT = 0.01;      // 采样时间间隔，单位：秒
-    double N = 400;        // 角速度采样数
+    double MAX_T0 = 3.34; // 最大周期
+    double T0_N = 30;     // 相位采样数
+    double DT = 0.01;     // 采样时间间隔，单位：秒
+    double N = 400;       // 角速度采样数
     // double DELAY_TIME = 0.37; // 预测时间，单位：秒
     double DELAY_TIME = 0;
-    int DN = 1;            // 逐差法测速度间距
+    int DN = 1; // 逐差法测速度间距
 
     uint32_t start_time;
-    bool is_Inited = false;             // 大符拟合是否初始化
-    bool is_direction_inited = false;   // 能量机关旋转方向初始化
-    bool is_clockwise;     // 顺时针
+    bool is_Inited = false;           // 大符拟合是否初始化
+    bool is_direction_inited = false; // 能量机关旋转方向初始化
+    bool is_clockwise;                // 顺时针
 
 public:
     /**
      *  @brief  封装API
      */
-    bool run(RuneArmor armor_1, vector<cv::Point2f> &nextPosition, ArmorState armor_state, Mode rune_mode=Mode::RUNE);
-
+    bool run(RuneArmor armor_1, vector<cv::Point2f> &nextPosition, ArmorState armor_state, Mode rune_mode = Mode::RUNE);
 
     /**
      *  @brief  清空数据
@@ -96,7 +94,7 @@ private:
 
     /**
      *  @brief  击打小符模式
-     */ 
+     */
     bool runNormalRune(RuneArmor armor_1, vector<cv::Point2f> &nextPosition, ArmorState armor_state);
 
     /**
@@ -212,7 +210,7 @@ private:
 
 public:
     FitTool(uint32_t _start_time = 0);
-    
+
     /**
      *  @brief  打印结果
      */
